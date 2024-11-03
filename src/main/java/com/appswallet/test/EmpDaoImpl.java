@@ -2,10 +2,12 @@ package com.appswallet.test;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import com.appswallet.test.Employee;
 
 
 @Repository
@@ -16,8 +18,12 @@ public class EmpDaoImpl implements EmpDao {
 
 	@Override
 	public int save(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+
+		 String sql = "insert into Employee (name) values (?)";
+		    
+		 return tmp.update(sql, employee.getName());
+
 	}
 
 	@Override
