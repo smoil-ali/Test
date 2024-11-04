@@ -20,9 +20,9 @@ public class EmpDaoImpl implements EmpDao {
 	public int save(Employee employee) {
 		
 
-		 String sql = "insert into Employee (name) values (?)";
+		 String sql = "INSERT into Employee (name) VALUES (?)";
 		    
-		 return tmp.update(sql, employee.getName());
+		 return tmp.update(sql, new Object[] {employee.getName()});
 
 	}
 
