@@ -20,34 +20,34 @@ public class EmpDaoImpl implements EmpDao {
 	public int save(Employee employee) {
 		
 
-		 String sql = "INSERT into Employee (name) VALUES (?)";
-		    
+		 String sql = "INSERT into Employee (name) VALUES (?)";		    
 		 return tmp.update(sql, new Object[] {employee.getName()});
 
 	}
 
 	@Override
-	public int update(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(Employee employee,int id) {
+		
+		String query = "UPDATE Employee set name = ? WHERE id = ?";
+		return tmp.update(query,new Object[] {employee.getName(),id});
 	}
 
 	@Override
 	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		String query = "DELETE FROM Employee WHERE id = ?";
+		return tmp.update(query,id);
 	}
 
 	@Override
 	public List<Employee> getAll() {
-		// TODO Auto-generated method stub
-		return tmp.query("select * from Employee",new BeanPropertyRowMapper<Employee>(Employee.class));
+		String query = "SELECT * FROM Employee";
+		return tmp.query(query,new BeanPropertyRowMapper<Employee>(Employee.class));
 	}
 
 	@Override
 	public Employee getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "SELECT * FROM Employee WHERE id = ?";
+		return tmp.queryForObject(query,new BeanPropertyRowMapper<Employee>(Employee.class), id);
 	}
 	
 	
