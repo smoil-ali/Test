@@ -1,7 +1,8 @@
-package com.appswallet.test;
+package com.appswallet.test.dao;
 
 import java.util.List;
-import com.appswallet.test.Employee;
+
+import com.appswallet.test.model.Employee;
 
 
 

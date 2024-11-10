@@ -1,4 +1,4 @@
-package com.appswallet.test;
+package com.appswallet.test.controller;
 
 import java.util.List;
 
@@ -11,48 +11,45 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.appswallet.test.EmpDao;
-import com.appswallet.test.Employee;
-
+import com.appswallet.test.dao.StudentDao;
+import com.appswallet.test.model.Student;
 
 @RestController
-public class TestController {
-
+public class StudentController {
+	
 	
 	@Autowired
-	private EmpDao dao;
+	StudentDao dao;
 	
-	@GetMapping("/employee")
-	public List<Employee> getAll(){
+	@GetMapping("/student")
+	public List<Student> getAll(){
 		return dao.getAll();
 	}
 	
-	@GetMapping("/employee/{id}")
-	public Employee getEmployeeById(@PathVariable int id) {
+	@GetMapping("/student/{id}")
+	public Student getStudentById(@PathVariable int id) {
 		return dao.getById(id);
 	}
 	
-	@PostMapping("/employee")
-	public String save(@RequestBody Employee e) {
+	@PostMapping("/student")
+	public String save(@RequestBody Student e) {
 		int result = dao.save(e);
 		
 		return result + " Row affected";
 	}
 	
-	@PutMapping("/employee/{id}")
-	public String update(@RequestBody Employee e,@PathVariable int id) {
+	@PutMapping("/student/{id}")
+	public String update(@RequestBody Student e,@PathVariable int id) {
 		
 		int result = dao.update(e, id);
 		return result + " Row affected";
 		
 	}
 	
-	@DeleteMapping("/employee/{id}")
+	@DeleteMapping("/student/{id}")
 	public String delete(@PathVariable int id) {
 		int result = dao.delete(id);
 		return result + " Row affected";
 	}
-	
 
 }

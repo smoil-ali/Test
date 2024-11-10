@@ -1,4 +1,4 @@
-package com.appswallet.test;
+package com.appswallet.test.model;
 
 
 
