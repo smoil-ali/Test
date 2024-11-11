@@ -23,7 +23,7 @@ public class StudentDaoImpl implements StudentDao   {
 		 String sql = "INSERT into Student (id,name,number,course,fee,feeTaken,feeComplete,free,date) VALUES (?,?,?,?,?,?,?,?)";		    
 		 return tmp.update(
 				 sql, 
-				 new Object[] {s.getName(),s.getNumber(),s.getCourse(),s.getFee(),
+				 new Object[] {s.getId(),s.getName(),s.getNumber(),s.getCourse(),s.getFee(),
 						 s.getFeeTaken(),s.isFeeComplete(),s.isFree(),s.getDate()}
 				 );
 	}
