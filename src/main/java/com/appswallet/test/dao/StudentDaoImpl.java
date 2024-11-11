@@ -20,10 +20,10 @@ public class StudentDaoImpl implements StudentDao   {
 	@Override
 	public int save(Student s) {
 		
-		 String sql = "INSERT into Student (id,name,number,course,fee,feeTaken,feeComplete,free,date) VALUES (?,?,?,?,?,?,?,?,?)";		    
+		 String sql = "INSERT into Student (name,number,course,fee,feeTaken,feeComplete,free,date) VALUES (?,?,?,?,?,?,?,?)";		    
 		 return tmp.update(
 				 sql, 
-				 new Object[] {s.getId(),s.getName(),s.getNumber(),s.getCourse(),s.getFee(),
+				 new Object[] {s.getName(),s.getNumber(),s.getCourse(),s.getFee(),
 						 s.getFeeTaken(),s.isFeeComplete(),s.isFree(),s.getDate()}
 				 );
 	}
