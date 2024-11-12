@@ -17,7 +17,6 @@ import com.appswallet.test.model.Employee;
 
 
 @RestController
-@RequestMapping("/")
 public class TestController {
 
 	

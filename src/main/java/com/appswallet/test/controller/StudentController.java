@@ -16,7 +16,6 @@ import com.appswallet.test.dao.StudentDao;
 import com.appswallet.test.model.Student;
 
 @RestController
-@RequestMapping("/street")
 public class StudentController {
 	
 	
