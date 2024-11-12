@@ -36,7 +36,8 @@ public class StudentController {
 	public String save(@RequestBody Student e) {
 		int result = dao.save(e);
 		
-		return result + " Row affected";
+		String json = "{" + "\"count\"" + ":" + "\"" + result +"\"" + "}";
+		return json;
 	}
 	
 	@PutMapping("/student/{id}")
