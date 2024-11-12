@@ -51,7 +51,8 @@ public class StudentController {
 	@DeleteMapping("/student/{id}")
 	public String delete(@PathVariable int id) {
 		int result = dao.delete(id);
-		return result + " Row affected";
+		String json = "{" + "\"count\"" + ":" + "\"" + result +"\"" + "}";
+		return json;
 	}
 
 }
