@@ -44,7 +44,8 @@ public class StudentController {
 	public String update(@RequestBody Student e,@PathVariable int id) {
 		
 		int result = dao.update(e, id);
-		return result + " Row affected";
+		String json = "{" + "\"count\"" + ":" + "\"" + result +"\"" + "}";
+		return json;
 		
 	}
 	
